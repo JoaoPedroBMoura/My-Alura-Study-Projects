@@ -1,0 +1,42 @@
+<canvas width="900" height="500"> </canvas>
+
+<script>
+var screen = document.querySelector('canvas'); //Tela
+var brush = screen.getContext('2d'); // Com que tipo de Ferramenta será usada
+/*
+brush.fillStyle= 'lightgrey'
+brush.fillRect(0 , 0, 900, 500);
+*/ 
+
+brush.fillStyle='green'      //	Tinta com que ira se pintar
+brush.fillRect(30,10,300,500) // Dimenções da Pintura
+
+brush.fillStyle='yellow'
+brush.fillRect(300,10,300,500)
+
+
+brush.fillStyle='red'
+brush.fillRect(600,10,300,500)
+
+brush.fillStyle='black' //Tinta
+brush.beginPath();      //Ponto de Largada/ponto inicial
+brush.moveTo(450,0);    //onde se coloca o pincel pela primeira vez
+brush.lineTo(400,500);  //A linha vai até esse ponto
+brush.lineTo(500,500);  //A linha vai até esse ponto
+brush.fill();           //Preenche
+
+brush.fillStyle='white' //Tinta
+brush.beginPath();      //Ponto central/ Ponto de Largada 
+brush.arc(450,250,50,0,2*3.14) //os dois primeiros mostram o ponto exato aonde o cirgulo vai começar, o raio do         									 circulo,angulo inicial igual a 0, duas vezes Pi
+brush.fill()                   //preencha
+
+
+ 
+       
+		
+
+
+
+
+
+</script>

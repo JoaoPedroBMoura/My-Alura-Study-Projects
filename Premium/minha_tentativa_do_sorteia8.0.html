@@ -1,0 +1,64 @@
+<meta charset="utf-8">
+  <h4>Qual foi o número que eu pensei ?</h4>
+  <input type="number">
+  <button> Foi esse ? </button>
+<script>
+ 
+	var input = document.querySelector("input")
+ input.focus();
+ 
+ var secretNumber = craftNumber(4)
+ console.log(secretNumber)
+ 
+ var button = document.querySelector("button");
+ button.onclick = check;
+
+	function randomNumber(){
+  return Math.round(Math.random()*10)
+ }
+ function craftNumber(theAmout){
+  var basket = []
+  var conter = 1
+
+    while(conter <= theAmout){
+    	var crazyNumber = randomNumber();
+    	var found = false;
+
+    	   if(crazyNumber !==0){
+    	   	for(var scanner = 0 ; scanner <= basket.length ; scanner++){
+    	   		
+    	   		if(basket[scanner] == crazyNumber){
+    	   		 found=true
+    	   		 break 
+    	   		}
+    	    }
+    	        if(found==false){
+                 basket.push(crazyNumber)
+                 conter++
+    	        }
+
+    	   }
+    }
+  return basket;
+}
+ function check (){
+ var found = false
+
+ for(var scanner = 0; scanner < secretNumber.length; scanner++){
+      	
+     if(input.value == secretNumber[scanner]){
+      found = true
+      alert("Parabéns você acertou")
+      break
+	 }		       			
+    }
+		if(found == false){
+		 alert("que pena")		        
+		}
+	input.value=""
+	input.focus();
+ }
+   
+ 
+
+</script>

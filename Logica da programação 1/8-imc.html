@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+
+<script >
+	function pula() {
+  document.write("<br> ")
+	}
+
+function texto(frase) {
+	document.write(frase);
+	pula();
+}
+
+
+function calculaimc(peso,altura) {
+
+  return Math.round(peso/(altura*altura));
+
+}
+
+var nome = prompt( "Informe seu nome")
+var alturainformada = prompt( nome + " ,informe sua altura");
+var pesoinformado = prompt(nome+ " ,informe seu peso");
+var imc = calculaimc(pesoinformado,alturainformada );
+
+texto( nome + "  O seu imc calculado é de: </h3>  " +imc);
+texto(" <br> <h4> O IMC considerado saldável  pela OMS- organização mundial da saúde é entre 18.5 e 2 5 </h4>  ")
+</script>

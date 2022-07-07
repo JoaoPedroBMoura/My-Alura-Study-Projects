@@ -1,0 +1,19 @@
+<canvas width="600" height="900">
+
+	<script>
+		
+		var screen = document.querySelector('canvas')
+		var brush = screen.getContext("2d")
+ 
+ function createSquere(x,y,color) {
+ 	    brush.fillStyle = color
+		brush.fillRect(x,y,50,50)
+		brush.fillStroke='black'
+		brush.strokeRect(x,y,50,50)
+		brush.strokeStyle='yellow'
+ }
+		
+		for(var x=0; x <= 600 ; x= x+50){
+			createSquere(x,0,'green')
+		}
+	</script>

@@ -1,0 +1,57 @@
+<canvas width="600" height="600"></canvas>
+<input type = "color">
+<script>
+    var screen = document.querySelector("canvas")
+    var brush = screen.getContext("2d")
+    var x = 10
+    var y = 10
+    var color = document.querySelector("input")
+
+    // codsOfKeybord
+
+    var left = 37
+    var up = 38 
+    var right = 39 
+    var donw = 40
+    var rate = 10   // rate of movement of the ball, this amount is added      
+                   // to the relative position of the ball
+
+    brush.fillStyle = "grey"
+    brush.fillRect(0,0,600,600)
+    
+    function createCircle(x,y,rain,){
+        brush.fillStyle = color.value
+        brush.beginPath()
+        brush.arc(x,y,rain,0,2*3.14)
+        brush.fill()
+    }
+        
+        function clearScren(){
+        brush.clearRect(0,0,600,600)
+        }
+
+        function updateScreen(){
+        clearScren();
+        createCircle(x,y,15)
+        }
+
+    setInterval(updateScreen,0.5)
+
+      function whatsKey(event){
+        if(event.keyCode == left){
+         x = x - rate
+        }
+         if(event.keyCode == right){
+          x = x + rate 
+         }
+          if(event.keyCode== up){
+           y = y - rate
+          }
+           if(event.keyCode== donw){
+            y = y + rate
+           }
+      }
+
+    document.onkeydown = whatsKey;
+
+</script>

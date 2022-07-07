@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+
+<h4> Quanto você ganha por Hora ? </h4>
+
+<script >
+	
+function pula() {
+document.write("<br>")
+}
+function texto(frase) {
+	document.write(frase)
+	pula()
+}
+ function calculasalario(quanto,semana,horas){
+return ((quanto/semana)/horas)
+
+ }
+
+var nome=prompt("Qual seu nome ?")
+var salariomes=parseInt(prompt("Quanto você ganha por mês?  "+ nome))
+var diastabalho=parseInt(prompt("Quantos dias você trabalha por mês?  " +nome));
+var horasdetrabalho=8
+
+var quanto_e=calculasalario(salariomes,diastabalho,horasdetrabalho)
+
+texto(" Oque você ganha por hora é:  "+ quanto_e +" reais")
+
+</script>

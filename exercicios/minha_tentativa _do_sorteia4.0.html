@@ -1,0 +1,63 @@
+<meta charset="UTF-8">
+<input>
+<button>Já viu esse número</button>
+ <script>
+ 
+function randomNumber() {
+    return Math.round(Math.random()*10);
+ }
+
+function craftNumbers(theAmout){    //The Amount= quantidade  
+  var secret = []
+  var conter = 1
+    
+     while(conter <= theAmout){
+     	var crazyNumber =  randomNumber();
+        var found = false
+         
+         if(crazyNumber!==0){
+            for (var scanner = 0; scanner <= secret.length; scanner ++){
+           	 if(secret[scanner]== crazyNumber ){
+              found=true
+              break
+           	 }
+           }
+     
+             if(found==false){
+             secret.push(crazyNumber)
+             conter++
+             }
+         }
+          
+
+     }
+  return secret;
+}  
+
+var input = document.querySelector("input")
+input.focus();
+
+var secretNumber = craftNumbers (4)
+console.log(secretNumber)
+
+function check(){
+  var found= false
+  for(var scanner = 0; scanner <= secretNumber.length; scanner++){
+  
+    if(input.value==secretNumber[scanner]){
+    found=true
+    alert("Já vi sim, era esse que eu tinha pensado")
+     break
+    }
+      if(found==false){
+       alert("Nunca nem vi")
+       break      
+      }
+  }
+  input.value=""
+  input.focus();
+}
+  var button= document.querySelector("button")
+  button.onclick=check;
+
+ </script>

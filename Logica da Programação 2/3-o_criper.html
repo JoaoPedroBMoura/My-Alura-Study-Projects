@@ -1,0 +1,24 @@
+<canvas width ='1000' height="800"></canvas>
+ 
+<script>
+	                                                //width representa o eixo X e o height o eixo y.
+	var canvas =  document.querySelector('canvas'); //canva significa tela
+	var paintBrush= canvas.getContext('2d');        //tipo de pincel
+ 
+  paintBrush.fillStyle='black'                 //fillStyle e para selecionar a cor da tinta que sempre devera estar em inglês
+  
+  paintBrush.fillRect(0,0,1000,800);           //fillRect e para criar em forma de retangulo 2 primeiro numero são           
+     											//cordedas de inicio da pintura, os 2 ultimos são de limite final da figura
+paintBrush.fillStyle='darKgreen'
+paintBrush.fillRect(150,100,650,650)
+
+paintBrush.fillStyle='black'
+//olhos
+paintBrush.fillRect(200,150,200,200) 
+paintBrush.fillRect(550,150,200,200)
+//nariz
+paintBrush.fillRect(400,350,150,200)
+//barba
+paintBrush.fillRect(300,450,100,200)
+paintBrush.fillRect(550,450,100,200)
+</script>

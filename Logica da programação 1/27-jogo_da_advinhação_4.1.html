@@ -1,0 +1,54 @@
+<meta charset = "UTF-8">
+<input/>
+<button>Compare com o numero pensado</button>
+<script>
+      function random() {
+      return Math.round(Math.random()*10)
+      }
+function craftnumber(numberofnumbers) {
+ var secret= []
+ var number=1;
+   while(number<= numberofnumbers){
+      var randomnumber = random()
+      var achou=false
+        if(randomnumber!==0){                       
+         for(var posicao=0; posicao< secret.length;posicao++){
+            
+            if(secret[posicao]==randomnumber){
+             achou=true
+             break
+            }
+}
+if(achou==false){
+secret.push(randomnumber)
+number++
+}
+}                  
+}
+return secret;
+}
+
+var segredos= craftnumber(4);
+console.log(segredos);
+var input = document.querySelector("input");
+input.focus();
+function verifica () {
+ var achou= false; 
+for(var coluna = 0 ; coluna < segredos.length; coluna++){
+   if(input== segredos[coluna] ){
+      achou=true;
+      alert("Você acertou!!!");
+      break;
+  
+  
+      if(achou== false ){
+      alert("Você Erooou filhão");
+      }
+   }
+
+ input.value = "";
+ input.focus();
+}
+var button= document.querySelector("button");
+button.onclick=verifica;
+</script>

@@ -1,0 +1,62 @@
+<meta charset="utf-8">
+O seu desafio será acertar um dos números sorteados pela maquina <br>  <h4>Boa sorte </h4>
+<input>
+<button>É esse ? </button>
+<script>
+function randomNumber() {
+	return Math.round(Math.random()*10);
+   }
+function craftNumbers(theAmout) {                         //A FUNÇÃO DE DESSA FUNÇÃ É IMPEDIR REPETIÇÕES E O ZERO.
+ var secret=[]     
+ var conter=1
+   
+     while(conter<=theAmout){                                  
+     	var numberCrazy= randomNumber();
+	    var found=false  
+	      
+	       if(numberCrazy!==0){
+	     
+	          for(var scanner = 0; scanner <= secret.length; scanner++ ){  //ESCANER
+			          	if(secret[scanner]== numberCrazy ){
+		                found=true
+		                break
+			          	}			             
+	          }
+	       
+                            if(found==false){
+		                    secret.push(numberCrazy)
+		                    conter++
+			              }
+
+	       }	
+     }
+    return secret; 
+  }
+
+var input= document.querySelector("input")
+input.focus();
+
+var secretNumber=craftNumbers(4)
+console.log(secretNumber)
+
+function check() {
+  	var found=false
+  	for(var scanner=0; scanner<secretNumber.length;scanner++){
+  		
+  		if(input.value == secretNumber[scanner]){
+        found=true
+  		alert("Parabéns, que sorte em!!!")
+  		break
+  		}  	      
+  	}
+	     if(found==false){
+		  alert("poxa que pena, tenta de novo")
+		 }
+     input.value=""
+     input.focus();
+  }                                      // A FUNÇÃO DESSA FUNÇÃ É VER SE A ENTRADA É == A UM DOS NUMEROS			 												SECRETOS
+
+var button= document.querySelector("button")
+button.onclick=check;
+                                                             
+</script>

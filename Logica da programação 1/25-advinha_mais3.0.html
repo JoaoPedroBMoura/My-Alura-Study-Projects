@@ -1,0 +1,24 @@
+<meta charset = "UTF-8">
+
+     <input/>
+     <button>Compare com o numero pensado</button>
+
+<script>
+var segredos= [3,5,8,9];
+var input = document.querySelector("input");
+input.focus();
+function verifica () {
+var achou= false; 
+for(var coluna = 0 ; coluna < segredos.length; coluna++){
+if(input.value == segredos[coluna] ){
+alert("Você acertou!!!");
+achou=true;
+break;
+}
+}
+input.value = "";
+input.focus();
+}
+var button= document.querySelector("button");
+button.onclick=verifica;
+</script>

@@ -1,0 +1,61 @@
+<meta charset="utf-8">
+<h4>Qual é o meu numero ?</h4>
+<input>
+<button>É esse ?</button>
+
+<script>
+ function randomNumber(){
+  return Math.round(Math. random()*10);
+ }
+
+ function craftNumber(theAmout) {
+ var basket = []
+  var conter = 1
+	  while(conter <= theAmout){
+	    var numberCrazy = randomNumber();
+	    var found = false  
+
+	       if(numberCrazy!== 0){
+
+	         for(var  scanner = 0 ; scanner <= basket.length; scanner++){
+	         	if(numberCrazy== basket[scanner]){
+	         		found=true
+	         		break
+	         	}
+	         }
+	            if(found==false){
+	            	basket.push(numberCrazy)
+	            	conter++ 
+	            }
+	       }
+
+	  }
+  return basket; 
+}
+
+ var input = document.querySelector("input");
+ input.focus()
+
+ var numberSecret = craftNumber (4)
+ console.log(numberSecret)
+
+ function check(){
+ var found = false
+ 	for(var scanner = 0; scanner < numberSecret.length;scanner++){
+ 		
+		if(input.value == numberSecret[scanner]){         
+          alert("Parabéns você acertou, foi esse mesmo")
+		  found=true
+          break
+ 		}
+ 	}
+	      if(found==false){
+		  alert("Não foi esse, tente de novo")
+		 }
+	input.value = "";
+	input.focus();
+ }
+
+ var button = document.querySelector("button")
+ button.onclick=check;
+ </script>

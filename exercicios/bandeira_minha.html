@@ -1,0 +1,28 @@
+<canvas width= '900' height="600"></canvas>
+
+<script>
+	var screen = document.querySelector ('canvas');//tela
+	var paintBush = screen.getContext("2d");  //pincel
+
+paintBush.fillStyle="green"
+paintBush.fillRect(0,0,300,600)
+
+paintBush.fillStyle="yellow"
+paintBush.fillRect(300,0,300,600)
+
+paintBush.fillStyle="green"
+paintBush.fillRect(600,0,300,600)
+
+paintBush.fillStyle="blue"
+paintBush.beginPath();
+paintBush.arc(450,300,150,0,2*3.14);
+paintBush.fill();
+
+paintBush.fillStyle="yellow"
+paintBush.beginPath();
+paintBush.moveTo(450,150)
+paintBush.lineTo(343,400)
+paintBush.lineTo(558,400)
+paintBush.fill();
+
+</script>

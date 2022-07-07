@@ -1,0 +1,51 @@
+<canvas width="600" height="600"></canvas>
+<script>
+var screen = document.querySelector("canvas")
+var brush = screen.getContext("2d")
+var rain =10
+var xRandom;
+var yRandom;
+  
+  function createCircle(x,y,rain,color){
+    brush.fillStyle = color
+    brush.beginPath()
+    brush.arc(x,y,rain,0,2*3.14)
+    brush.fill()
+
+ }
+  function drawTarget(x,y){
+        createCircle(x,y,rain+20,"red")    
+        createCircle(x,y,rain+10,"white")
+        createCircle(x,y,rain,"red")
+     
+    }
+  function  drawNumber(maximum){
+   return Math.floor(Math.random()*maximum)
+  } 
+  function updateScreen(){
+    brush.clearRect(0,0,600,600)
+     xRandom = drawNumber(600)
+     yRandom = drawNumber(600)
+    drawTarget(xRandom,yRandom)
+
+  }
+  function shoot(event){
+    var x = event.pageX - screen.offsetLeft;
+    var y = event.pageY - screen.offsetTop;
+     
+     if ((x > xRandom - rain) 
+     && (x < xRandom + rain) 
+       && (y > yRandom - rain) 
+         && (y < yRandom + rain)){
+
+       alert ("Na mosca")
+     }
+  }
+
+  setInterval(updateScreen, 2000)
+  brush.fillStyle = "lightgray"
+  brush.fillRect(0,0,600,600)
+
+screen.onclick = shoot;
+    
+</script>

@@ -1,0 +1,36 @@
+  <canvas width="600" height="600"></canvas>
+
+ <script>
+ 	
+
+ 	function createSquare(x,y,width,height,color) {
+ 	var screen = document.querySelector("canvas")
+ 	var brush = screen.getContext('2d')
+ 	
+	 	brush.fillStyle= color;
+	 	brush.fillRect(x,y,width,height)
+	 	brush.fillStroke="black"
+	 	brush.strokeRect(x,y,width,height)
+ 	}
+
+ 	function createText(x,y,text,color) {
+    var screen = document.querySelector("canvas")
+ 	var brush = screen.getContext('2d')
+
+ 		brush.font='15px  Georgia'
+        brush.fillStyle= color
+        brush.fillText(text,x,y)
+
+ 	}
+
+ 	createSquare(50,50,70,120,'blue')
+ 	createText(125,100,'chrome','black')
+
+ 	createSquare(50,170,70,60,"green")
+ 	createText(125,200,"Fire Fox","black")
+
+    createSquare(50,230,70,30,"yellow")
+ 	createText(125,250,"Safari","black")
+
+
+ </script>

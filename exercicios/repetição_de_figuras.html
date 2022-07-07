@@ -1,0 +1,27 @@
+<canvas width="600" height=" 900">
+
+	<script>
+		var screen = document.querySelector("canvas")
+		var brush = screen.getContext("2d")
+
+       brush.fillStyle="green"
+       brush.fillRect(0,0,600,900)
+
+		function createCircule(x,y,rain,color){
+          brush.fillStyle=color
+          brush.beginPath()
+          brush.arc(x,y,rain,0,2*3.14);
+          brush.fill();
+		}
+  
+         brush.fillStyle='brown'
+		brush.fillRect(295,450,10,150)
+
+		createCircule(300,450,25,'yellow')
+		createCircule(250,450,25,'blue')
+		createCircule(300,400,25,'blue')
+		createCircule(350,450,25,'blue')
+		createCircule(300,500,25,'blue')
+
+       
+	</script>

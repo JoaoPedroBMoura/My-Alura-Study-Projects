@@ -1,0 +1,15 @@
+<script >
+   function mostra(frase){
+   document.write(frase);
+   }
+   
+   var integrantesFamilia = parseInt(prompt("Quantos pessoas fazem parte da sua família ? "));
+  var totalIdades=0;
+        
+    for (var contaIntegrantes=1; contaIntegrantes <= integrantesFamilia; contaIntegrantes++) {
+            var idadeIntegrantes = parseInt(prompt("Qual a idade do "+contaIntegrantes+"º familiar?"));
+            totalIdades=totalIdades+idadeIntegrantes;
+    }
+        var mediaIdades=totalIdades/integrantesFamilia;
+ mostra("A média das idades dos integrantes da família é: "+ Math.round(mediaIdades)+".");
+    </script>

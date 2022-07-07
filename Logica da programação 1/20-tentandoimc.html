@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+
+<script>
+	
+     function pula() {
+	 document.write("<br>")
+   }
+     function texto(frase){
+     document.write(frase)
+     pula()
+   }
+    function calculaimc(peso,altura){
+    return Math.round(peso/(altura*altura));
+   }
+	    var nome= prompt(" Qual seu Nome ? ");
+	   var altura=prompt(" Qual a sua altura ? ");
+	  var peso= prompt(" Qual seu peso? ");
+	 var imc= calculaimc(peso,altura)
+texto(" Seu IMC é:  " + imc)
+texto(" <h4> O iMC aconselhado pela OMS é entre 18.5 e 25</h4>")
+
+     if( imc > 25){
+texto(" Seu Imc se encontra acima do recomendado pela OMS.")
+   }																
+     if( imc < 15.5){
+texto(" Seu Imc se encotra abaixo do recomendado pela OMS.")
+   }
+
+     if( imc>= 18.5 && imc <= 25){
+texto(" <h4>Seu imc está dentro do recomendado pela OMS !!! parabéns.</h4>")
+   }
+</script>

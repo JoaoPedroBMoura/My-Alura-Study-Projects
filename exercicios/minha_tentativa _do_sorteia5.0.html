@@ -1,0 +1,63 @@
+<meta charset="utf-8">
+<h4>E ai...consegue imaginar o numero que eu pensei ? </h4>
+<input>
+<button>Foi esse ?</button>
+ <script>
+function randomNumber() {
+  return Math.round(Math.random()*10);
+ }
+
+function craftNumbers(theAmout){
+ var secret = []
+ var conter = 1
+   
+   while(conter <= theAmout){
+   	var numberCrazy= randomNumber();
+   	var found = false
+   	 
+   	 if(numberCrazy !== 0 ){
+   	 	for(var scanner= 0; scanner <=secret.length; scanner++){
+   	 		if(secret[scanner]==numberCrazy){
+             found=true
+             break
+   	 		}
+   	 	}
+   	       if(found==false){
+           secret.push(numberCrazy);
+   	       conter++
+   	       }
+
+   	 }
+   }
+  return secret;
+}
+ 
+var input= document.querySelector("input")
+input.focus();
+
+var secretNumber= craftNumbers(4)
+console.log(secretNumber);
+
+function check() {
+ var found= false
+ for(var scanner= 0 ; scanner<= secretNumber.length; scanner++){
+ 	if(input.value==secretNumber[scanner]){
+     found=true
+     alert("Parabéns você acertou!!")
+     break
+      
+      if(found==false){
+      alert("Que pena, tenta de novo, ainda não é esse o número")
+      break
+      } 	
+ 	}
+ }
+ input.value=""
+ input.focus();
+}
+ var button= document.querySelector("button")
+ button.onclick=check;
+
+
+
+ </script>

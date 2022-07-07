@@ -1,0 +1,71 @@
+ <meta charset="UTF-8">
+ <input>
+ <button>Compare</button>
+
+  <script>
+  
+  	function randomNumber() {
+           return Math.round(Math.random()*100);
+    } 
+	  function craftNumbers (theAmout) {  // theAmout = quantidade
+	     var secret = []	      
+	     var counter= 1                   // counter= contador
+
+	       while(counter<= theAmout){            
+	           var numberCrazy=randomNumber()
+	           var found=false                      // found = achou
+	              if(numberCrazy<=60){
+				    if(numberCrazy!==0){
+				           	  for (var scanner = 0; scanner<secret.length; scanner ++) {
+				              	    if (secret[scanner]==numberCrazy) {
+				              	    	found=true
+				              	    	break;
+				              	    }
+				              }
+				         if(found==false){
+				            secret.push(numberCrazy)
+				            counter++
+				         }
+				              
+				   }                                                        
+	            }
+	       }
+
+	  
+	      return secret;
+	  }
+
+					  var numberSecret=craftNumbers(5)					 
+				    numberSecret.sort(function(a,b){
+				      if(a<b){
+				       return -1;
+				      }
+				       else{
+				       	return true
+				       }
+					   });
+						 console.log(numberSecret)
+
+	 var input=document.querySelector("input")
+	 input.focus();
+
+	 function check() {
+	 	  var found=false
+		 	for(scanner=0; scanner<=numberSecret.length;scanner++){    
+		        if(input.value == numberSecret[scanner]){
+		           found=true
+		           alert("Parabéns, você teve muita sorete")
+		           break
+		        }
+		           if(found==false){
+		           	alert("Que pena, tenta de novo")            
+		            break
+		           }         
+		    }
+		   input.value=""
+		   input.focus();
+	 }
+   
+var button=document.querySelector('button');
+button.onclick=check;
+  </script> 	

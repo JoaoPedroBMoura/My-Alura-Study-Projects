@@ -1,0 +1,31 @@
+<canvas width="600" height="600"></canvas>
+ <script>
+ 	var screen = document.querySelector("canvas")
+ 	var brush = screen.getContext("2d")
+
+ 	 brush.fillStyle = "lightgray"
+ 	 brush.fillRect(0,0,600,600)
+
+	 	  function drawCircle(x,y,rain){
+	 	  	brush.fillStyle = "blue"
+	 	  	brush.beginPath()
+	 	  	brush.arc(x,y,rain,0,2*	Math.PI)
+	 	  	brush.fill()
+
+	 	  }
+
+	        function clear(){
+			 brush.clearRect(0,0,600,600)
+			}
+ 
+  var x = 20;
+
+     function animationCircle(){
+     	clear()
+     	drawCircle(x,20,10)
+     	x++
+     }
+
+ setInterval(animationCircle,0.5);
+
+ </script>

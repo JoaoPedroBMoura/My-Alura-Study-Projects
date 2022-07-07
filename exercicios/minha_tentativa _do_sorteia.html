@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+<input>
+<button>Compare com o Meu</button>
+<script>
+       
+	function randomNumber() { 
+		return Math.round(Math.random()*10)
+	}
+	function craftNumber(theAmout){       //theAmout=quantidade
+		var secret1=[]
+		var number0=1           
+			while(number0<=theAmout ){
+			  var numberCrazy=randomNumber()
+				if(numberCrazy!==0){
+					var achou=false
+						for(var scanner=0;scanner<secret1.length;scanner++){
+							if(secret1[scanner]==numberCrazy){
+							achou=true;
+							break;  	
+							}
+					    }
+					if(achou==false){
+					secret1.push(numberCrazy)
+					number0++
+					}
+			    } 		  	  
+			}
+		return secret1;
+	}
+		var numberSecret=craftNumber(4)
+		console.log(numberSecret)   
+			
+			var input= document.querySelector("input")  
+			input.focus();
+
+	function checks (){
+	  
+	  var achou=false;
+			
+			for(var scanner=0;scanner< numberSecret.length;scanner++){
+					if (input.value ==numberSecret[scanner]) {					
+					 achou=true;
+					 alert("Parabéns você acertou!!!")
+					 break;
+					}							
+		    }
+		            if(achou==false ){
+					alert("Que pena....você errou")
+					}		  
+
+		input.value='' 
+		input.focus();      
+	}
+
+var button= document.querySelector('button') ;
+button.onclick=checks;
+
+</script>

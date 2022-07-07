@@ -1,0 +1,23 @@
+<canvas width="600" height="400"></canvas>
+<script >
+	var screen=document.querySelector('canvas'); //tela
+	var brush= screen.getContext('2d')
+
+	brush.fillStyle='gray'
+	brush.fillRect(0,0,600,400)
+
+    brush.fillStyle='black'
+    brush.beginPath();
+    brush.moveTo(25,25);
+    brush.lineTo(25,350);
+    brush.lineTo(400,350);
+    brush.fill();
+
+    brush.fillStyle='white';
+    brush.beginPath();
+    brush.moveTo(35,50);
+    brush.lineTo(35,340);
+    brush.lineTo(365,340);
+    brush.fill();
+
+</script>

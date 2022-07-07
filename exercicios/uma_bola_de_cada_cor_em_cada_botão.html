@@ -1,0 +1,39 @@
+<canvas width="600" height="600">
+<script>
+	var screen = document.querySelector("canvas")
+	var brush = screen.getContext("2d")
+
+    brush.fillStyle= 'grey'
+    brush.fillRect(0,0,600,600)
+
+	function creatCircle(event){
+ var x = event.pageX - screen.offsetLeft;
+ var y = event.pageY - screen.offsetLeft;
+    
+     brush.fillStyle='blue';
+     brush.beginPath();
+     brush.arc(x,y,20,0,2*3.14);
+     brush.fill();
+
+         console.log(x + ',' + y)
+
+	}
+
+	  screen.onclick=creatCircle;
+
+	  function mudarCor(){
+	   var x = event.pageX - screen.offsetLeft;
+       var y = event.pageY - screen.offsetLeft;
+    
+     brush.fillStyle='green';
+     brush.beginPath();
+     brush.arc(x,y,20,0,2*3.14);
+     brush.fill();
+
+         console.log(x + ',' + y)
+
+	  }
+
+  screen.oncontextmenu=mudarCor;
+
+</script> 

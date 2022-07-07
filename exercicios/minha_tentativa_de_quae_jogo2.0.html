@@ -1,0 +1,38 @@
+<canvas width="600" height="600"></canvas>
+<script>
+ var screen = document.querySelector("canvas")
+ var brush = screen.getContext("2d")
+ var x = 1
+ var direction = 1
+  
+  brush.fillStyle = "grey"
+  brush.fillRect(0,0,600,600)
+
+  function createCircle (x,y,rain){
+   brush.fillStyle="blue"
+   brush.beginPath()
+   brush.arc(x,y,rain,0,2*3.14)
+   brush.fill()
+  }
+
+  function clearScreen (){
+   brush.clearRect(0,0,600,6000)
+  }
+
+  function updateScreen(){
+    clearScreen();
+     
+      if(x>585){
+       direction = -1
+      }
+        if(x<0){
+         direction = 1
+        }
+
+    createCircle(x,200,15)
+    x=x+direction
+}
+
+ setInterval(updateScreen,0,5)
+
+</script>

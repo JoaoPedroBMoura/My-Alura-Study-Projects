@@ -1,0 +1,24 @@
+<meta charsert="utf-8">
+<script >
+function pula() {
+document.write("<br>")
+	}	
+function texto(frase) {
+	document.write(frase)
+    pula()
+}
+
+function calculaenem(linguagem,cienciash,cienciasn,matema,redação) {
+	return parseInt(linguagem+cienciash+cienciasn+matema+redação)/5
+}
+	var linguagem = parseInt (prompt("Qual sua nota em linguagem? "));
+    var cienciash = parseInt(prompt(" Qual sua nota em Ciências Humanas?"));
+    var cienciasn = parseInt(prompt("Qual sua nota em Ciências da Natureza?"));
+    var matema = parseInt(prompt("Qual sua nota em Matemática?"));
+    var redação = parseInt(prompt("Qual sua Nota na redação?"));
+    var totalnotas= parseInt(calculaenem (linguagem,cienciash,cienciasn,matema,redação));
+
+    texto("Seu total de pontuação é de: " + totalnotas )
+
+
+</script>

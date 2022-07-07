@@ -1,0 +1,48 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+
+    var pincel = tela.getContext("2d");
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+var gradient = pincel.createLinearGradient(0, 0, 600, 400);
+    gradient.addColorStop(0, "#0000ff");
+    gradient.addColorStop(0.5, "#bf00bf");
+    gradient.addColorStop(0.8, "#ff0080");
+    gradient.addColorStop(1.0, "#ff0000");
+
+    var desenha = false;
+
+    tela.onmousemove = function (event) {
+
+if (desenha) {
+    var x = event.pageX - tela.offsetLeft;
+    var y = event.pageY - tela.offsetTop;
+    pincel.fillStyle = gradient;
+    pincel.beginPath();
+    pincel.arc(x, y, 10, 0, 2 * 3.14);
+    pincel.fill();
+}
+//console.log(x + ',' + y);
+
+}
+
+function DesenharOn() {
+
+desenha = true;
+}
+
+function DesenharOff() {
+
+desenha = false;
+}
+
+tela.onmousedown = DesenharOn;
+
+tela.onmouseup = DesenharOff;
+
+
+</script>

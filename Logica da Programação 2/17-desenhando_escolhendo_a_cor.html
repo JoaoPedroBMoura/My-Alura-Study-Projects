@@ -1,0 +1,41 @@
+<canvas width="600" height="600"></canvas>
+<br>
+ Escolha uma cor<input type="color">
+
+  <script>
+    var palette = document.querySelector("input")
+    var screen = document.querySelector("canvas")
+  	var brush= screen.getContext("2d")
+  	
+   
+  	  brush.fillStyle = 'grey'
+  	  brush.fillRect (0,0,600,600)
+                                              
+  	var draw =false
+  	 function createCircle(event) {
+     
+          if(draw){
+                 var x =event.pageX - screen.offsetLeft;
+                 var y = event.pageY - screen.offsetTop;
+            
+                brush.fillStyle = palette.value
+                brush.beginPath()
+                brush.arc(x,y,10,0,2*3.14)
+                brush.fill()
+          }
+             console.log(x+','+y) 	 
+     }
+
+  function habilitDraw(){
+      draw = true
+  }
+ 
+ function desabilitDraw() {
+  draw = false
+ }
+ 
+  screen.onmousemove = createCircle;
+  screen.onmouseup = desabilitDraw;
+  screen.onmousedown = habilitDraw;
+
+  </script>
